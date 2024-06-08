@@ -24,8 +24,8 @@ int main(){
 }
 
 void MaxHeapify(vector<int>& heap, int i,int n){
-    int leftChild = 2*i;
-    int rightChild = 2*i +1;
+    int leftChild = 2*i + 1;
+    int rightChild = 2*i + 2;
     int largest = i;
 
     if(leftChild < n && heap[leftChild] > heap[largest])
@@ -39,7 +39,7 @@ void MaxHeapify(vector<int>& heap, int i,int n){
 }
 
 void BuildMaxHeap(vector<int>& heap,int n){
-    for(int i = n/2; i>=0;i--){
+    for(int i = (n/2)-1; i>=0;i--){
         MaxHeapify(heap,i,n);
     }
 }
